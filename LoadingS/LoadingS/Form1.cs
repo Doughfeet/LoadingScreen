@@ -18,7 +18,14 @@ namespace LoadingS
             Thread thread = new Thread(new ThreadStart(Splash));
             thread.Start();
             InitializeComponent();
-
+            //Loading data
+            string str = string.Empty;
+            for (int i = 0; i < 100000; i++)
+            {
+                str += i.ToString(); // Init data
+            }
+            //Complete
+            thread.Abort();
         }
 
         void Splash()
